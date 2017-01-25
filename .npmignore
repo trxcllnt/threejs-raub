@@ -1,7 +1,2 @@
-examples/*
-!examples/js/
-src/
-test/
-utils/
-docs/
-editor/
+bin_*
+*.log
