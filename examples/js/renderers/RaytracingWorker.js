@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 var worker;
 var BLOCK = 128;
 var startX, startY, division, completed = 0;

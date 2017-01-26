@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 function Transition ( sceneA, sceneB ) {
 
 	this.scene = new THREE.Scene();

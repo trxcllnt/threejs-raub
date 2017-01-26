@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * This class had been written to handle the output of the NRRD loader.
  * It contains a volume of data and informations about it.

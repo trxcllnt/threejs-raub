@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 THREE.UCSCharacter = function() {
 
 	var scope = this;

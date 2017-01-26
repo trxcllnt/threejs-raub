@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 
 // This is ammo.js, a port of Bullet Physics to JavaScript. zlib licensed.
 var AmmoLib = function(Module) {

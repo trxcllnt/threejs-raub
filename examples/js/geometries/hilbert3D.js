@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * Hilbert Curve: Generates 2D-Coordinates in a very fast way.
  *

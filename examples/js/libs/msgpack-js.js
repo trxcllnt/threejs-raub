@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 ( // Module boilerplate to support browser globals and browserify and AMD.
   typeof define === "function" ? function (m) { define("msgpack-js", m); } :
   typeof exports === "object" ? function (m) { module.exports = m(); } :

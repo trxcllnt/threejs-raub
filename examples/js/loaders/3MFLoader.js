@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 THREE.ThreeMFLoader = function ( manager ) {
 
 	this.manager = ( manager !== undefined ) ? manager : THREE.DefaultLoadingManager;

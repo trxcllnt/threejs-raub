@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /*
  * Cloth Simulation using a relaxed constraints solver
  */

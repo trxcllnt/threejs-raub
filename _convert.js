@@ -1,9 +1,5 @@
 'use strict';
 
-const three = require('./build/three');
-
-global.__three = three;
-
 const fs = require('fs');
 
 (function _recurse(dir, subdir) {
@@ -17,11 +13,19 @@ const fs = require('fs');
 		if (stat.isDirectory()) {
 			_recurse(current, file);
 		} else if (stat.isFile() && /.js$/.test(file)) {
-			require(current + '/' + file);
+			const fileText = fs.readFileSync(current + '/' + file).toString();
+			
+			if (/^(\'use strict\'\;)?\s*const THREE \= global\.__three\;/.test()) {
+				return; // nothing to do here
+			}
+			
+			fs.writeFileSync(
+				current + '/' + file,
+				'\'use strict\';\nconst THREE = global.__three;\n\n' + fileText
+			);
 		}
 		
 	});
 	
 })(__dirname, 'examples/js');
 
-delete global.__three;

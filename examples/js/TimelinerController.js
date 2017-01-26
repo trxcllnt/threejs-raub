@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * Controller class for the Timeliner GUI.
  *

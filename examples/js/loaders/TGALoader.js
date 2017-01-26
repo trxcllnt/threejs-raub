@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /*
  * @author Daosheng Mu / https://github.com/DaoshengMu/
  * @author mrdoob / http://mrdoob.com/

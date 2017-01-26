@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
 * @author Tim Knip / http://www.floorplanner.com/ / tim at floorplanner.com
 * @author Tony Parisi / http://www.tonyparisi.com/

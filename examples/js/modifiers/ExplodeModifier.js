@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * Make all faces use unique vertices
  * so that each face can be separated from others

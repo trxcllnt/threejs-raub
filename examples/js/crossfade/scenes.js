@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 function generateGeometry( objectType, numObjects ) {
 
 	var geometry = new THREE.Geometry();

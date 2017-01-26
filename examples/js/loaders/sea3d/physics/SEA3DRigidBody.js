@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * 	SEA3D - Rigid Body
  * 	@author Sunag / http://www.sunag.com.br/

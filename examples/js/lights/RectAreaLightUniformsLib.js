@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * Uniforms library for RectAreaLight shared webgl shaders
  * @author abelnation

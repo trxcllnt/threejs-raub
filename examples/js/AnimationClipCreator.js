@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  *
  * Creator of typical test AnimationClips / KeyframeTracks

@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 THREE.NRRDLoader = function ( manager ) {
 
 	this.manager = ( manager !== undefined ) ? manager : THREE.DefaultLoadingManager;

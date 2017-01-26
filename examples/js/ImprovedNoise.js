@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 // http://mrl.nyu.edu/~perlin/noise/
 
 var ImprovedNoise = function () {

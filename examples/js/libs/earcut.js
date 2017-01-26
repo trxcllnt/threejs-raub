@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  *
  * Earcut https://github.com/mapbox/earcut

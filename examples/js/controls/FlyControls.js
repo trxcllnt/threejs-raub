@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * @author James Baicoianu / http://www.baicoianu.com/
  */

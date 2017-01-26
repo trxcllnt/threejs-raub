@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 THREE.DecalVertex = function( v, n ) {
 
 	this.vertex = v;

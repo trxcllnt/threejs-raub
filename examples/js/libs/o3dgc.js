@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /*global ArrayBuffer, Uint32Array, Int32Array, Float32Array, Int8Array, Uint8Array, window, performance, Console*/
 
 /*

@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * @author miibond
  * Generate a texture that represents the luminosity of the current scene, adapted over time

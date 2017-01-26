@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /*
  * $Id: rawinflate.js,v 0.3 2013/04/09 14:25:38 dankogai Exp dankogai $
  *

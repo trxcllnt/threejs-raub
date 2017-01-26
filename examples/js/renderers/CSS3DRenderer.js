@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * Based on http://www.emagix.net/academic/mscs-project/item/camera-sync-with-css3-and-webgl-threejs
  * @author mrdoob / http://mrdoob.com/

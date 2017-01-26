@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /*
  * GPU Particle System
  * @author flimshaw - Charlie Hoey - http://charliehoey.com

@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /*
 Copyright (c) 2011 Juan Mellado
 

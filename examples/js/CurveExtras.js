@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /*
  * A bunch of parametric curves
  * @author zz85

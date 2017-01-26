@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * @author Alexander Gessler / http://www.greentoken.de/
  * https://github.com/acgessler

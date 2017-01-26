@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 THREE.MirrorNode = function( renderer, camera, options ) {
 
 	THREE.TempNode.call( this, 'v4' );

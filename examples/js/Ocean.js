@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 ﻿THREE.Ocean = function ( renderer, camera, scene, options ) {
 
 	// flag used to trigger parameter changes

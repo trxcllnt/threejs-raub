@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * Loads a Wavefront .mtl file specifying materials
  *

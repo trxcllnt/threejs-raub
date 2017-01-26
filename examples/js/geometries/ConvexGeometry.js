@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * @author qiao / https://github.com/qiao
  * @fileoverview This is a convex hull generator using the incremental method. 

@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * Break faces with edges longer than maxEdgeLength
  * - not recursive

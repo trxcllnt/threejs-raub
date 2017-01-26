@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * Depth-of-field post-process with bokeh shader
  */

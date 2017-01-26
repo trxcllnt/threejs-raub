@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * This class has been made to hold a slice of a volume data
  * @class

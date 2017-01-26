@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * @author mrdoob / http://mrdoob.com
  * Based on @tojiro's vr-samples-utils.js

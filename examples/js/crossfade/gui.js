@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 var transitionParams = {
 	"useTexture": true,
 	"transition": 0.5,

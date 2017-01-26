@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * 	SEA3D - o3dgc
  * 	@author Sunag / http://www.sunag.com.br/

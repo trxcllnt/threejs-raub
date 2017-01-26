@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /*!
  *
  * threeoctree.js (r60) / https://github.com/collinhover/threeoctree

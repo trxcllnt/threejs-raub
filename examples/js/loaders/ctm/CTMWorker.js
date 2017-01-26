@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 importScripts( "lzma.js", "ctm.js" );
 
 self.onmessage = function( event ) {

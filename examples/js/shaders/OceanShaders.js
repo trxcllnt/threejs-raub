@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 ﻿// Author: Aleksandr Albert
 // Website: www.routter.co.tt
 

@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * RaytracingRenderer renders by raytracing it's scene. However, it does not
  * compute the pixels itself but it hands off and coordinates the taks for workers.

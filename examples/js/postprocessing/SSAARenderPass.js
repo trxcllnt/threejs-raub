@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
 *
 * Supersample Anti-Aliasing Render Pass

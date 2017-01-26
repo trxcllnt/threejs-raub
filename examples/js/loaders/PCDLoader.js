@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * @author Filipe Caixeta / http://filipecaixeta.com.br
  *

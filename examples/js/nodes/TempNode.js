@@ -1,3 +1,6 @@
+'use strict';
+const THREE = global.__three;
+
 /**
  * Automatic node cache
  * @author sunag / http://www.sunag.com.br/
