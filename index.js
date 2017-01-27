@@ -10,18 +10,28 @@ const fs = require('fs');
 	
 	const current = dir + '/' + subdir;
 	
-	fs.readdirSync(current).forEach(file => {
+	const content = fs.readdirSync(current);
+	
+	const dirs  = [];
+	const files = [];
+	
+	content.forEach(file => {
 		
-		const stat = fs.statSync( current + '/' + file );
+		const stat = fs.statSync(current + '/' + file);
 		
 		if (stat.isDirectory()) {
-			_recurse(current, file);
+			dirs.push(file);
 		} else if (stat.isFile() && /.js$/.test(file)) {
-			require(current + '/' + file);
+			files.push(file);
 		}
 		
 	});
 	
+	files.forEach(file => require(current + '/' + file));
+	dirs.forEach(dir => _recurse(current, dir));
+	
 })(__dirname, 'examples/js');
 
 delete global.__three;
+
+module.exports = three;

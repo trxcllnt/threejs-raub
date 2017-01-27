@@ -55,7 +55,7 @@ const THREE = global.__three;
 
 	}
 
-	AWDProperties = function() {};
+	var AWDProperties = function() {};
 
 	AWDProperties.prototype = {
 		set : function( key, value ) {
