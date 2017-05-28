@@ -2,36 +2,19 @@
 
 const three = require('./build/three');
 
-global.__three = three;
-
-const fs = require('fs');
-
-(function _recurse(dir, subdir) {
+three.extension = (file) => {
 	
-	const current = dir + '/' + subdir;
+	global.__three = three;
 	
-	const content = fs.readdirSync(current);
+	try {
+		require(`./examples/js/${file}`);
+	} catch (ex) {
+		console.error('Error loading extension, probably missing header.');
+		console.error(ex);
+	}
 	
-	const dirs  = [];
-	const files = [];
+	delete global.__three;
 	
-	content.forEach(file => {
-		
-		const stat = fs.statSync(current + '/' + file);
-		
-		if (stat.isDirectory()) {
-			dirs.push(file);
-		} else if (stat.isFile() && /.js$/.test(file)) {
-			files.push(file);
-		}
-		
-	});
-	
-	files.forEach(file => require(current + '/' + file));
-	dirs.forEach(dir => _recurse(current, dir));
-	
-})(__dirname, 'examples/js');
-
-delete global.__three;
+};
 
 module.exports = three;
