@@ -1442,7 +1442,8 @@ THREE.ColladaLoader.prototype = {
 			}
 
 			object.name = data.name;
-			matrix.decompose( object.position, object.quaternion, object.scale );
+			object.matrix.copy( matrix );
+			object.matrix.decompose( object.position, object.quaternion, object.scale );
 
 			return object;
 

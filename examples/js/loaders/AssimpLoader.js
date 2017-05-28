@@ -970,7 +970,7 @@ const THREE = global.__three;
 
 			}
 
-			return THREE.ImageUtils.loadTexture( baseURL + path );
+			return new THREE.TextureLoader().load( baseURL + path );
 
 		};
 
@@ -1853,7 +1853,7 @@ const THREE = global.__three;
 
 					}
 
-					
+
 
 				}
 
@@ -1876,7 +1876,7 @@ const THREE = global.__three;
 				} else {
 
 					throw ( new Error( "Sorry, can't currently triangulate polys. Use the triangulate preprocessor in Assimp." ))
-					
+
 				}
 
 
