@@ -58,13 +58,13 @@ const THREE = global.__three;
 	var AWDProperties = function() {};
 
 	AWDProperties.prototype = {
-		set : function( key, value ) {
+		set: function( key, value ) {
 
 			this[ key ] = value;
 
 		},
 
-		get : function( key, fallback ) {
+		get: function( key, fallback ) {
 
 			if ( this.hasOwnProperty( key ) )
 				return this[ key ];
@@ -291,7 +291,6 @@ const THREE = global.__three;
 					mtx,
 					materials, mat, mat_id,
 					num_materials,
-					materials_parsed,
 					parent,
 					i;
 
@@ -304,7 +303,6 @@ const THREE = global.__three;
 			geometries = this.getBlock( data_id );
 
 			materials = [];
-			materials_parsed = 0;
 
 			for ( i = 0; i < num_materials; i ++ ) {
 

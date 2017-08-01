@@ -1,6 +1,6 @@
 {
   "name": "node-threejs-raub",
-  "version": "0.85.21",
+  "version": "0.86.0",
   "description": "JavaScript 3D library. Nodejs npm-friendly port of up-to-date three.js library.",
   "repository": {
     "type": "git",
