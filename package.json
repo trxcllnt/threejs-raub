@@ -1,14 +1,23 @@
 {
   "name": "node-threejs-raub",
-  "version": "0.86.0",
-  "description": "JavaScript 3D library. Nodejs npm-friendly port of up-to-date three.js library.",
+  "version": "0.86.1",
+  "description": "A fork of three.js for better node.js usage.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/raub/node-threejs.git"
   },
+  "maintainers": [
+    {
+      "name" : "Luis Blanco",
+      "email": "raubtierxxx@gmail.com",
+      "skype": "rauber666"
+    }
+  ],
   "keywords": [
     "three",
     "three.js",
+    "node",
+    "node.js",
     "3d",
     "webgl"
   ],
