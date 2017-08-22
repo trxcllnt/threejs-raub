@@ -1,6 +1,6 @@
 {
   "name": "node-threejs-raub",
-  "version": "0.86.1",
+  "version": "0.87.1",
   "description": "A fork of three.js for better node.js usage.",
   "repository": {
     "type": "git",
