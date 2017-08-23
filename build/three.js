@@ -9657,9 +9657,6 @@
 
 			}
 
-			gl.bindBuffer( bufferType, buffer );
-			gl.bufferData( bufferType, array, usage );
-
 			attribute.onUploadCallback();
 
 			var type = gl.FLOAT;
