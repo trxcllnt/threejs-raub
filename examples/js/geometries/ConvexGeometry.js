@@ -5,7 +5,7 @@ const THREE = global.__three;
  * @author Mugen87 / https://github.com/Mugen87
  */
 
-( function() {
+( function () {
 
 	// ConvexGeometry
 
@@ -85,4 +85,4 @@ const THREE = global.__three;
 	THREE.ConvexGeometry = ConvexGeometry;
 	THREE.ConvexBufferGeometry = ConvexBufferGeometry;
 
-} ) ();
+} )();
