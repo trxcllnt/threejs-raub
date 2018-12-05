@@ -1,18 +1,10 @@
 {
+  "author": "Luis Blanco <luisblanco1337@gmail.com>",
   "name": "threejs-raub",
   "version": "0.99.0",
   "description": "A fork of three.js for Node3D",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/raub/threejs-raub.git"
-  },
-  "maintainers": [
-    {
-      "name" : "Luis Blanco",
-      "email": "raubtierxxx@gmail.com",
-      "skype": "rauber666"
-    }
-  ],
+  "license": "MIT",
+  "main": "index.js",
   "keywords": [
     "three",
     "three.js",
@@ -21,6 +13,19 @@
     "3d",
     "webgl"
   ],
-  "author": "mrdoob",
-  "license": "MIT"
+  "engines": {
+    "node": ">=10.13.0",
+    "npm": ">=6.4.1"
+  },
+  "maintainers": [
+    {
+      "name" : "Luis Blanco",
+      "email": "raubtierxxx@gmail.com",
+      "skype": "rauber666"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raub/threejs-raub.git"
+  }
 }
