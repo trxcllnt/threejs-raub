@@ -1,2 +1,7 @@
-bin_*
 *.log
+.DS_Store
+.gitignore
+.idea
+.lock-wscript
+.project
+package-lock.json

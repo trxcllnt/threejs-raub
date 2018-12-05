@@ -1,10 +1,10 @@
 {
-  "name": "node-threejs-raub",
-  "version": "0.89.0",
-  "description": "A fork of three.js for better node.js usage.",
+  "name": "threejs-raub",
+  "version": "0.99.0",
+  "description": "A fork of three.js for Node3D",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/raub/node-threejs.git"
+    "url": "git+https://github.com/raub/threejs-raub.git"
   },
   "maintainers": [
     {
@@ -22,6 +22,5 @@
     "webgl"
   ],
   "author": "mrdoob",
-  "license": "MIT",
-  "homepage": "http://threejs.org/"
+  "license": "MIT"
 }

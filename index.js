@@ -2,7 +2,8 @@
 
 const three = require('./build/three');
 
-three.extension = (file) => {
+
+three.extension = file => {
 	
 	global.__three = three;
 	
