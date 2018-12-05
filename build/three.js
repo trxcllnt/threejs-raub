@@ -7672,6 +7672,27 @@
 
 		function update( attribute, bufferType ) {
 
+			if ( attribute.isGLBufferAttribute ) {
+
+				var cached = buffers.get( attribute );
+
+				if ( cached && cached.version >= attribute.version ) {
+
+					return;
+
+				}
+
+				buffers.set( attribute, {
+					buffer: attribute.buffer,
+					type: attribute.type,
+					bytesPerElement: attribute.elementSize,
+					version: attribute.version
+				} );
+
+				return;
+
+			}
+
 			if ( attribute.isInterleavedBufferAttribute ) attribute = attribute.data;
 
 			var data = buffers.get( attribute );
@@ -9432,26 +9453,9 @@
 
 		computeVertexNormals: function ( areaWeighted ) {
 
-<<<<<<< HEAD
-			var buffer;
-
-			if (attribute.onCreateCallback) {
-
-				buffer = attribute.onCreateCallback();
-
-			} else {
-
-				buffer = gl.createBuffer();
-
-				gl.bindBuffer( bufferType, buffer );
-				gl.bufferData( bufferType, array, usage );
-
-			}
-=======
 			if ( areaWeighted === undefined ) areaWeighted = true;
 
 			var v, vl, f, fl, face, vertices;
->>>>>>> 54c6ef8d350dd65a99717ab6136ce61035bc7239
 
 			vertices = new Array( this.vertices.length );
 
@@ -11228,7 +11232,7 @@
 
 		addAttribute: function ( name, attribute ) {
 
-			if ( ! ( attribute && attribute.isBufferAttribute ) && ! ( attribute && attribute.isInterleavedBufferAttribute ) ) {
+			if ( ! ( attribute && ( attribute.isBufferAttribute || attribute.isInterleavedBufferAttribute || attribute.isGLBufferAttribute ) ) ) {
 
 				console.warn( 'THREE.BufferGeometry: .addAttribute() now expects ( name, attribute ).' );
 
@@ -11755,6 +11759,19 @@
 
 			var position = this.attributes.position;
 
+			if ( position && position.isGLBufferAttribute ) {
+
+				console.error( 'THREE.BufferGeometry.computeBoundingBox(): GLBufferAttribute requires a manual bounding box. Alternatively set "mesh.frustumCulled" to "false".', this );
+
+				this.boundingBox.set(
+					new Vector3( - Infinity, - Infinity, - Infinity ),
+					new Vector3( + Infinity, + Infinity, + Infinity )
+				);
+
+				return;
+
+			}
+
 			if ( position !== undefined ) {
 
 				this.boundingBox.setFromBufferAttribute( position );
@@ -11767,7 +11784,7 @@
 
 			if ( isNaN( this.boundingBox.min.x ) || isNaN( this.boundingBox.min.y ) || isNaN( this.boundingBox.min.z ) ) {
 
-				console.error( 'THREE.BufferGeometry.computeBoundingBox: Computed min/max have NaN values. The "position" attribute is likely to have NaN values.', this );
+				console.error( 'THREE.BufferGeometry.computeBoundingBox(): Computed min/max have NaN values. The "position" attribute is likely to have NaN values.', this );
 
 			}
 
@@ -11787,6 +11804,16 @@
 				}
 
 				var position = this.attributes.position;
+
+				if ( position && position.isGLBufferAttribute ) {
+
+					console.error( 'THREE.BufferGeometry.computeBoundingSphere(): GLBufferAttribute requires a manual bounding sphere. Alternatively set "mesh.frustumCulled" to "false".', this );
+
+					this.boundingSphere.set( new Vector3(), Infinity );
+
+					return;
+
+				}
 
 				if ( position ) {
 
@@ -43276,6 +43303,101 @@
 	} );
 
 	/**
+	 * @author raub / https://github.com/raub
+	 */
+
+
+	function GLBufferAttribute( gl, buffer, type, itemSize, count ) {
+
+		this.sizes = [
+			[ 5126, 4 ],
+			[ 5123, 2 ],
+			[ 5122, 2 ],
+			[ 5125, 4 ],
+			[ 5124, 4 ],
+			[ 5120, 1 ],
+			[ 5121, 1 ],
+		].reduce( function ( accum, current ) {
+
+			accum[ current[ 0 ] ] = current[ 1 ];
+			return accum;
+
+		}, {} );
+
+		if ( ! this.sizes[ type ] ) {
+
+			throw new TypeError( 'THREE.GLBufferAttribute: unsupported GL data type.' );
+
+		}
+
+		this.uuid = _Math.generateUUID();
+
+		this.buffer = buffer;
+		this.type = type;
+		this.itemSize = itemSize;
+		this.elementSize = this.sizes[ type ];
+		this.count = count;
+
+		this.version = 0;
+
+	}
+
+	Object.defineProperty( GLBufferAttribute.prototype, 'needsUpdate', {
+
+		set: function ( value ) {
+
+			if ( value === true ) this.version ++;
+
+		}
+
+	} );
+
+	Object.assign( GLBufferAttribute.prototype, {
+
+		isGLBufferAttribute: true,
+
+		setBuffer: function ( buffer ) {
+
+			this.buffer = buffer;
+
+			return this;
+
+		},
+
+		setType: function ( type ) {
+
+			if ( ! this.sizes[ type ] ) {
+
+				throw new TypeError( 'THREE.GLBufferAttribute: unsupported GL data type.' );
+
+			}
+
+			this.type = type;
+			this.elementSize = this.sizes[ type ];
+
+			return this;
+
+		},
+
+		setItemSize: function ( itemSize ) {
+
+			this.itemSize = itemSize;
+
+			return this;
+
+		},
+
+		setCount: function ( count ) {
+
+			this.count = count;
+
+			return this;
+
+		},
+
+	} );
+
+	/**
 	 * @author mrdoob / http://mrdoob.com/
 	 * @author bhouston / http://clara.io/
 	 * @author stephomi / http://stephaneginier.com/
@@ -47398,6 +47520,7 @@
 	exports.InstancedInterleavedBuffer = InstancedInterleavedBuffer;
 	exports.InterleavedBuffer = InterleavedBuffer;
 	exports.InstancedBufferAttribute = InstancedBufferAttribute;
+	exports.GLBufferAttribute = GLBufferAttribute;
 	exports.Face3 = Face3;
 	exports.Object3D = Object3D;
 	exports.Raycaster = Raycaster;
