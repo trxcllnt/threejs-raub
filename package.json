@@ -1,7 +1,7 @@
 {
   "author": "Luis Blanco <luisblanco1337@gmail.com>",
   "name": "threejs-raub",
-  "version": "0.99.0",
+  "version": "0.100.0",
   "description": "A fork of three.js for Node3D",
   "license": "MIT",
   "main": "index.js",
