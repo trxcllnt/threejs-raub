@@ -1,6 +1,6 @@
 {
   "name": "threejs-raub",
-  "version": "0.107.0",
+  "version": "0.107.1",
   "description": "JavaScript 3D library",
   "main": "build/three.min.js",
   "repository": {
@@ -11,16 +11,11 @@
   "module": "build/three.module.js",
   "types": "src/Three.d.ts",
   "files": [
-    "build/three.js",
     "build/three.min.js",
-    "build/three.module.js",
     "examples/js",
-    "examples/jsm",
-    "examples/fonts",
     "LICENSE",
     "package.json",
-    "README.md",
-    "src"
+    "README.md"
   ],
   "directories": {
     "doc": "docs",
