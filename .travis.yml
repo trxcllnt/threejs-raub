@@ -1,5 +1,18 @@
 language: node_js
+
 node_js:
-  - node
+  - "10.16.1"
+
+
+matrix:
+  include:
+  - name: "Linux"
+    os: linux
+    dist: xenial
+    sudo: false
+  - name: "MacOS"
+    os: osx
+
+
 script:
-  - npm run travis
+  echo OK.

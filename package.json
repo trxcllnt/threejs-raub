@@ -1,9 +1,12 @@
 {
-  "name": "three",
+  "name": "threejs-raub",
   "version": "0.107.0",
   "description": "JavaScript 3D library",
-  "main": "build/three.js",
-  "repository": "mrdoob/three.js",
+  "main": "build/three.min.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raub/threejs-raub.git"
+  },
   "jsnext:main": "build/three.module.js",
   "module": "build/three.module.js",
   "types": "src/Three.d.ts",
